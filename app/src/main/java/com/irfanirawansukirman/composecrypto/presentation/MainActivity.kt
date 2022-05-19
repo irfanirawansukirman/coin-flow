@@ -12,7 +12,9 @@ import com.irfanirawansukirman.composecrypto.presentation.coindetail.CoinDetailS
 import com.irfanirawansukirman.composecrypto.presentation.coins.CoinsScreen
 import com.irfanirawansukirman.composecrypto.presentation.ui.theme.ComposeCryptoTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

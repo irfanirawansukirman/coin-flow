@@ -7,9 +7,11 @@ import androidx.lifecycle.viewModelScope
 import com.irfanirawansukirman.composecrypto.common.Resource
 import com.irfanirawansukirman.composecrypto.domain.usecase.CoinsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@ExperimentalCoroutinesApi
 @HiltViewModel
 class CoinsViewModel @Inject constructor(
     private val getCoinsUseCase: CoinsUseCase

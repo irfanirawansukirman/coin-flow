@@ -14,3 +14,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Compose Crypto"
 include ':app'
+include ':coin'
+include ':about'
+include ':core'
+include ':ui-component'
+include ':analytic'

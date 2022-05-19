@@ -1,20 +1,39 @@
 package com.irfanirawansukirman.composecrypto.data.remote.dto
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+//data class CoinsDto(
+//    @SerializedName("id")
+//    val id: String?,
+//    @SerializedName("is_active")
+//    val isActive: Boolean?,
+//    @SerializedName("is_new")
+//    val isNew: Boolean?,
+//    @SerializedName("name")
+//    val name: String?,
+//    @SerializedName("rank")
+//    val rank: Int?,
+//    @SerializedName("symbol")
+//    val symbol: String?,
+//    @SerializedName("type")
+//    val type: String?
+//)
+
+@JsonClass(generateAdapter = true)
 data class CoinsDto(
-    @SerializedName("id")
+    @Json(name = "id")
     val id: String?,
-    @SerializedName("is_active")
+    @Json(name = "is_active")
     val isActive: Boolean?,
-    @SerializedName("is_new")
+    @Json(name = "is_new")
     val isNew: Boolean?,
-    @SerializedName("name")
+    @Json(name = "name")
     val name: String?,
-    @SerializedName("rank")
+    @Json(name = "rank")
     val rank: Int?,
-    @SerializedName("symbol")
+    @Json(name = "symbol")
     val symbol: String?,
-    @SerializedName("type")
+    @Json(name = "type")
     val type: String?
 )

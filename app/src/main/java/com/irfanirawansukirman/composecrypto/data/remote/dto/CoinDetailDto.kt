@@ -1,114 +1,233 @@
 package com.irfanirawansukirman.composecrypto.data.remote.dto
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+//data class CoinDetailDto(
+//    @SerializedName("description")
+//    val description: String?,
+//    @SerializedName("development_status")
+//    val developmentStatus: String?,
+//    @SerializedName("first_data_at")
+//    val firstDataAt: String?,
+//    @SerializedName("hardware_wallet")
+//    val hardwareWallet: Boolean?,
+//    @SerializedName("hash_algorithm")
+//    val hashAlgorithm: String?,
+//    @SerializedName("id")
+//    val id: String?,
+//    @SerializedName("is_active")
+//    val isActive: Boolean?,
+//    @SerializedName("is_new")
+//    val isNew: Boolean?,
+//    @SerializedName("last_data_at")
+//    val lastDataAt: String?,
+//    @SerializedName("links")
+//    val links: Links?,
+//    @SerializedName("links_extended")
+//    val linksExtended: List<LinksExtended>?,
+//    @SerializedName("message")
+//    val message: String?,
+//    @SerializedName("name")
+//    val name: String?,
+//    @SerializedName("open_source")
+//    val openSource: Boolean?,
+//    @SerializedName("org_structure")
+//    val orgStructure: String?,
+//    @SerializedName("proof_type")
+//    val proofType: String?,
+//    @SerializedName("rank")
+//    val rank: Int?,
+//    @SerializedName("started_at")
+//    val startedAt: String?,
+//    @SerializedName("symbol")
+//    val symbol: String?,
+//    @SerializedName("tags")
+//    val tags: List<Tag>?,
+//    @SerializedName("team")
+//    val teamMember: List<TeamMember>?,
+//    @SerializedName("type")
+//    val type: String?,
+//    @SerializedName("whitepaper")
+//    val whitepaper: Whitepaper?
+//)
+//
+//data class Links(
+//    @SerializedName("explorer")
+//    val explorer: List<String>?,
+//    @SerializedName("facebook")
+//    val facebook: List<String>?,
+//    @SerializedName("reddit")
+//    val reddit: List<String>?,
+//    @SerializedName("source_code")
+//    val sourceCode: List<String>?,
+//    @SerializedName("website")
+//    val website: List<String>?,
+//    @SerializedName("youtube")
+//    val youtube: List<String>?
+//)
+//
+//data class LinksExtended(
+//    @SerializedName("stats")
+//    val stats: Stats?,
+//    @SerializedName("type")
+//    val type: String?,
+//    @SerializedName("url")
+//    val url: String?
+//)
+//
+//data class Stats(
+//    @SerializedName("contributors")
+//    val contributors: Int?,
+//    @SerializedName("followers")
+//    val followers: Int?,
+//    @SerializedName("stars")
+//    val stars: Int?,
+//    @SerializedName("subscribers")
+//    val subscribers: Int?
+//)
+//
+//data class Tag(
+//    @SerializedName("coin_counter")
+//    val coinCounter: Int?,
+//    @SerializedName("ico_counter")
+//    val icoCounter: Int?,
+//    @SerializedName("id")
+//    val id: String?,
+//    @SerializedName("name")
+//    val name: String?
+//)
+//
+//data class TeamMember(
+//    @SerializedName("id")
+//    val id: String?,
+//    @SerializedName("name")
+//    val name: String?,
+//    @SerializedName("position")
+//    val position: String?
+//)
+//
+//data class Whitepaper(
+//    @SerializedName("link")
+//    val link: String?,
+//    @SerializedName("thumbnail")
+//    val thumbnail: String?
+//)
+
+@JsonClass(generateAdapter = true)
 data class CoinDetailDto(
-    @SerializedName("description")
+    @Json(name = "description")
     val description: String?,
-    @SerializedName("development_status")
+    @Json(name = "development_status")
     val developmentStatus: String?,
-    @SerializedName("first_data_at")
+    @Json(name = "first_data_at")
     val firstDataAt: String?,
-    @SerializedName("hardware_wallet")
+    @Json(name = "hardware_wallet")
     val hardwareWallet: Boolean?,
-    @SerializedName("hash_algorithm")
+    @Json(name = "hash_algorithm")
     val hashAlgorithm: String?,
-    @SerializedName("id")
+    @Json(name = "id")
     val id: String?,
-    @SerializedName("is_active")
+    @Json(name = "is_active")
     val isActive: Boolean?,
-    @SerializedName("is_new")
+    @Json(name = "is_new")
     val isNew: Boolean?,
-    @SerializedName("last_data_at")
+    @Json(name = "last_data_at")
     val lastDataAt: String?,
-    @SerializedName("links")
+    @Json(name = "links")
     val links: Links?,
-    @SerializedName("links_extended")
+    @Json(name = "links_extended")
     val linksExtended: List<LinksExtended>?,
-    @SerializedName("message")
+    @Json(name = "message")
     val message: String?,
-    @SerializedName("name")
+    @Json(name = "name")
     val name: String?,
-    @SerializedName("open_source")
+    @Json(name = "open_source")
     val openSource: Boolean?,
-    @SerializedName("org_structure")
+    @Json(name = "org_structure")
     val orgStructure: String?,
-    @SerializedName("proof_type")
+    @Json(name = "proof_type")
     val proofType: String?,
-    @SerializedName("rank")
+    @Json(name = "rank")
     val rank: Int?,
-    @SerializedName("started_at")
+    @Json(name = "started_at")
     val startedAt: String?,
-    @SerializedName("symbol")
+    @Json(name = "symbol")
     val symbol: String?,
-    @SerializedName("tags")
+    @Json(name = "tags")
     val tags: List<Tag>?,
-    @SerializedName("team")
+    @Json(name = "team")
     val teamMember: List<TeamMember>?,
-    @SerializedName("type")
+    @Json(name = "type")
     val type: String?,
-    @SerializedName("whitepaper")
+    @Json(name = "whitepaper")
     val whitepaper: Whitepaper?
 )
 
+@JsonClass(generateAdapter = true)
 data class Links(
-    @SerializedName("explorer")
+    @Json(name = "explorer")
     val explorer: List<String>?,
-    @SerializedName("facebook")
+    @Json(name = "facebook")
     val facebook: List<String>?,
-    @SerializedName("reddit")
+    @Json(name = "reddit")
     val reddit: List<String>?,
-    @SerializedName("source_code")
+    @Json(name = "source_code")
     val sourceCode: List<String>?,
-    @SerializedName("website")
+    @Json(name = "website")
     val website: List<String>?,
-    @SerializedName("youtube")
+    @Json(name = "youtube")
     val youtube: List<String>?
 )
 
+@JsonClass(generateAdapter = true)
 data class LinksExtended(
-    @SerializedName("stats")
+    @Json(name = "stats")
     val stats: Stats?,
-    @SerializedName("type")
+    @Json(name = "type")
     val type: String?,
-    @SerializedName("url")
+    @Json(name = "url")
     val url: String?
 )
 
+@JsonClass(generateAdapter = true)
 data class Stats(
-    @SerializedName("contributors")
+    @Json(name = "contributors")
     val contributors: Int?,
-    @SerializedName("followers")
+    @Json(name = "followers")
     val followers: Int?,
-    @SerializedName("stars")
+    @Json(name = "stars")
     val stars: Int?,
-    @SerializedName("subscribers")
+    @Json(name = "subscribers")
     val subscribers: Int?
 )
 
+@JsonClass(generateAdapter = true)
 data class Tag(
-    @SerializedName("coin_counter")
+    @Json(name = "coin_counter")
     val coinCounter: Int?,
-    @SerializedName("ico_counter")
+    @Json(name = "ico_counter")
     val icoCounter: Int?,
-    @SerializedName("id")
+    @Json(name = "id")
     val id: String?,
-    @SerializedName("name")
+    @Json(name = "name")
     val name: String?
 )
 
+@JsonClass(generateAdapter = true)
 data class TeamMember(
-    @SerializedName("id")
+    @Json(name = "id")
     val id: String?,
-    @SerializedName("name")
+    @Json(name = "name")
     val name: String?,
-    @SerializedName("position")
+    @Json(name = "position")
     val position: String?
 )
 
+@JsonClass(generateAdapter = true)
 data class Whitepaper(
-    @SerializedName("link")
+    @Json(name = "link")
     val link: String?,
-    @SerializedName("thumbnail")
+    @Json(name = "thumbnail")
     val thumbnail: String?
 )
