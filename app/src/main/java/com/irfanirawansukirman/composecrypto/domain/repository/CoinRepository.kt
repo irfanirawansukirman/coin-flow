@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface CoinRepository {
 
-    suspend fun getCoins(): Flow<List<CoinsDto>>
+    suspend fun getCoins(): List<CoinsDto>
 
     suspend fun getCoinById(coinId: String): CoinDetailDto
 }

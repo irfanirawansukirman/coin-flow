@@ -11,7 +11,7 @@ class CoinRepositoryImpl @Inject constructor(
     private val coinPaprikaApi: CoinPaprikaApi
 ) : CoinRepository {
 
-    override suspend fun getCoins():Flow<List<CoinsDto>> {
+    override suspend fun getCoins(): List<CoinsDto> {
         return coinPaprikaApi.getCoins()
     }
 
