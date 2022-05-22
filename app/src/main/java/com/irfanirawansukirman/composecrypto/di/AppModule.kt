@@ -1,11 +1,10 @@
 package com.irfanirawansukirman.composecrypto.di
 
 import com.irfanirawansukirman.composecrypto.common.Constants
+import com.irfanirawansukirman.composecrypto.common.CoroutineContextProvider
 import com.irfanirawansukirman.composecrypto.data.remote.CoinPaprikaApi
 import com.irfanirawansukirman.composecrypto.data.repository.CoinRepositoryImpl
 import com.irfanirawansukirman.composecrypto.domain.repository.CoinRepository
-import com.squareup.moshi.KotlinJsonAdapterFactory
-import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +13,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
@@ -22,6 +20,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    @Provides
+    @Singleton
+    fun provideCoroutineContextProvider(): CoroutineContextProvider = CoroutineContextProvider()
 
     @Provides
     @Singleton

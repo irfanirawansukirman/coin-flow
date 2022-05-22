@@ -1,7 +1,5 @@
 package com.irfanirawansukirman.composecrypto.presentation.coins
 
-import android.content.Context
-import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,7 +18,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.irfanirawansukirman.composecrypto.presentation.Screen
 import com.irfanirawansukirman.composecrypto.presentation.coins.component.CoinItem
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalCoroutinesApi
 @Composable
 fun CoinsScreen(
     navController: NavController,
@@ -28,11 +28,13 @@ fun CoinsScreen(
 ) {
     val state = viewModel.state.value
     Box(modifier = Modifier.fillMaxSize()) {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(state.coins ?: emptyList()) { coin ->
-                CoinItem(coins = coin, onItemClick = {
-                    navController.navigate(Screen.CoinDetailScreen.route + "/${coin.id}")
-                })
+        if (!state.coins.isNullOrEmpty()) {
+            LazyColumn(modifier = Modifier.fillMaxSize()) {
+                items(state.coins) { coin ->
+                    CoinItem(coins = coin, onItemClick = {
+                        navController.navigate(Screen.CoinDetailScreen.route + "/${coin.id}")
+                    })
+                }
             }
         }
 

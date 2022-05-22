@@ -7,8 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.irfanirawansukirman.composecrypto.common.Resource
 import com.irfanirawansukirman.composecrypto.domain.usecase.CoinsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
@@ -28,13 +30,13 @@ class CoinsViewModel @Inject constructor(
         viewModelScope.launch {
             getCoinsUseCase()
                 .collect { state ->
-                    when (state) {
-                        is Resource.Loading -> _state.value =
-                            CoinsState(isLoading = state.isLoading)
-                        is Resource.Success -> {
-                            _state.value = CoinsState(coins = state.data)
+                    withContext(Dispatchers.Main) {
+                        when (state) {
+                            is Resource.Loading -> _state.value =
+                                CoinsState(isLoading = state.isLoading)
+                            is Resource.Success -> _state.value = CoinsState(coins = state.data)
+                            is Resource.Error -> _state.value = CoinsState(error = state.error)
                         }
-                        is Resource.Error -> _state.value = CoinsState(error = state.error)
                     }
                 }
         }

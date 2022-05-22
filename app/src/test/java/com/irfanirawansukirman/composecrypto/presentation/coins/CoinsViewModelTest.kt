@@ -6,13 +6,15 @@ import com.irfanirawansukirman.composecrypto.domain.model.Coins
 import com.irfanirawansukirman.composecrypto.domain.usecase.CoinsUseCase
 import com.irfanirawansukirman.composecrypto.util.DataFactory
 import com.irfanirawansukirman.composecrypto.util.MainCoroutineRule
+import io.mockk.clearAllMocks
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
-import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
+import org.junit.After
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -30,7 +32,7 @@ class CoinsViewModelTest {
     private lateinit var viewModel: CoinsViewModel
 
     @Before
-    fun setUp() {
+    fun `setup dependencies`() {
         useCase = mockk(relaxed = true)
         viewModel = CoinsViewModel(useCase)
     }
@@ -93,5 +95,10 @@ class CoinsViewModelTest {
             val actual = viewModel.state.value.error
             assertEquals(expected, actual)
         }
+    }
+
+    @After
+    fun `clear mocks`() {
+        clearAllMocks()
     }
 }
